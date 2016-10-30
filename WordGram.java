@@ -6,7 +6,7 @@
 //int compareTo(WordGram other)
 //WordGram shiftAdd(String last) 
 
-public class WordGram {
+public class WordGram implements Comparable<WordGram> {
 	  private String[] myWords;
 	  private int myHash;
 	  public WordGram(String[] source, int start, int size){
@@ -69,9 +69,6 @@ public class WordGram {
 		  return 0;
 	  }
 	  public WordGram shiftAdd(String last){
-		 // String [] shifted  = new String[this.myWords.length];
-		//  System.arraycopy(this.myWords, 1, shifted, 0, this.myWords.length);
-		//  WordGram wg = new WordGram(this.myWords,0,this.myWords.length);
 		  
 		  for(int i = 0; i<myWords.length-1; i++){
 			  	myWords[i] = myWords[i+1];
@@ -87,8 +84,7 @@ public class WordGram {
 			 if(i != myWords.length-1)
 				 answer += myWords[i] + ",";
 			 else
-				 answer += myWords[i];
-				 
+				 answer += myWords[i];	 
 		  }
 		  answer += "}";
 		  return answer;
